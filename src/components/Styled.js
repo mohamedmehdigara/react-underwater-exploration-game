@@ -234,31 +234,55 @@ export const TerrainFeature = styled.div`
   }};
 `;
 
-export const TreasureChestContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 10px;
-  border: 2px solid #ffc107; /* Example border color */
-  border-radius: 10px;
-  background-color: #fff; /* Example background color */
-  transition: transform 0.3s;
-  user-select: none; /* Prevent text selection */
-  
-  &:hover {
-    transform: scale(1.1); /* Enlarge the chest on hover */
-  }
+// Styled.js
+
+const sparkleAnimation = keyframes`
+  0% { opacity: 0; transform: translateY(-50%); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(0); }
 `;
 
-export const ChestIcon = styled.div`
-  font-size: 48px; /* Adjust icon size */
+export const TreasureChestContainer = styled.div`
+  position: relative;
+  cursor: pointer;
+`;
+
+export const ChestIcon = styled.span`
+  font-size: 24px;
 `;
 
 export const ChestText = styled.p`
   margin-top: 5px;
+  font-size: 14px;
 `;
+
+export const ChestParticles = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #ffd700;
+    border-radius: 50%;
+    animation: ${sparkleAnimation} 0.5s ease-in-out infinite;
+  }
+
+  &::before {
+    left: -10px;
+  }
+
+  &::after {
+    left: 10px;
+  }
+`;
+
 
 export const VehicleContainer = styled.div`
   display: flex;
@@ -466,4 +490,11 @@ export const StatIcon = styled.span`
 export const StatusBar = styled.div`
   display: flex;
   align-items: center;
+`;
+
+
+export const RuinsTitle = styled.h2`
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
 `;

@@ -1,15 +1,25 @@
 // TreasureChest.js
-import React from 'react';
-import { TreasureChestContainer, ChestIcon, ChestText } from './Styled';
+import React, { useState } from 'react';
+import { TreasureChestContainer, ChestIcon, ChestText, ChestParticles } from './Styled';
 
 function TreasureChest({ onClick }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    // Ensure onClick is a function before calling it
+    if (typeof onClick === 'function') {
+      onClick();
+    }
+  };
+
   return (
-    <TreasureChestContainer onClick={onClick}>
+    <TreasureChestContainer onClick={handleClick}>
       <ChestIcon>
-        {/* Add an icon or image representing the treasure chest */}
-        🏆
+        {/* Add an icon or image representing the closed or open treasure chest */}
+        {isOpen ? '🎉' : '🏆'}
       </ChestIcon>
-      <ChestText>Click to collect treasure!</ChestText>
+      <ChestText>{isOpen ? 'Treasure Collected!' : 'Click to collect treasure!'}</ChestText>
+      {isOpen && <ChestParticles />}
     </TreasureChestContainer>
   );
 }

@@ -15,6 +15,10 @@ import Quest from './components/Quest';
 import UnderwaterRuins from './components/UnderwaterRuins';
 
 function App() {
+  const handleTreasureCollection = () => {
+    console.log('Treasure collected!');
+    // Add logic to handle treasure collection
+  };
   return (
     <div>
     <Container>
@@ -26,7 +30,7 @@ function App() {
      <Obstacle />
      <PlayerStatus health={100} oxygenLevel={80} score={500} />
      <UnderwaterWorld />
-     <TreasureChest/>
+     <TreasureChest onClick={handleTreasureCollection} />
      <UnderwaterVehicle type="submarine" />
      <Inventory/>
      <Quest/>

@@ -1,10 +1,10 @@
-// UnderwaterRuins.js
 import React from 'react';
-import { RuinsContainer, RuinsSVG, RuinsText } from './Styled';
+import { RuinsContainer, RuinsSVG, RuinsText, RuinsTitle } from './Styled';
 
-function UnderwaterRuins({ description }) {
+function UnderwaterRuins({ title, description }) {
   return (
     <RuinsContainer>
+      <RuinsTitle>{title}</RuinsTitle>
       <RuinsSVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
         {/* Add SVG paths to draw the underwater ruins */}
         <rect x="50" y="50" width="100" height="100" fill="#795548" />
