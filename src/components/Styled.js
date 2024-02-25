@@ -343,3 +343,15 @@ export const ScoreDisplay = styled.p`
   color: #fff;
   margin-top: 20px;
 `;
+
+export const NavLink = styled.a`
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #e0e0e0;
+  }
+`;
