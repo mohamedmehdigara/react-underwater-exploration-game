@@ -259,3 +259,38 @@ export const ChestIcon = styled.div`
 export const ChestText = styled.p`
   margin-top: 5px;
 `;
+
+export const VehicleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 2px solid #03a9f4; /* Example border color */
+  border-radius: 10px;
+  background-color: #fff; /* Example background color */
+`;
+
+export const VehicleIcon = styled.div`
+  font-size: 48px; /* Adjust icon size */
+`;
+
+export const VehicleName = styled.p`
+  margin-top: 5px;
+`;
+
+export const InventoryContainer = styled.div`
+  border: 2px solid #4caf50; /* Example border color */
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+`;
+
+export const ItemList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+`;
+
+export const Item = styled.li`
+  margin-bottom: 5px;
+`;

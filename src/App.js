@@ -9,6 +9,8 @@ import Obstacle from './components/Obstacle';
 import PlayerStatus from './components/PlayerStatus';
 import UnderwaterWorld from './components/UnderwaterWorld';
 import TreasureChest from './components/TreasureChest';
+import UnderwaterVehicle from './components/UnderwaterVehicule';
+import Inventory from './components/Inventory';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
      <PlayerStatus health={100} oxygenLevel={80} score={500} />
      <UnderwaterWorld />
      <TreasureChest/>
+     <UnderwaterVehicle type="submarine" />
+     <Inventory/>
 
      </div>
   );
