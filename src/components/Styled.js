@@ -421,3 +421,40 @@ export const ObstacleButton = styled.button`
     background-color: #6a89cc;
   }
 `;
+
+// Styled.js
+
+
+
+// Progress bar component
+export const ProgressBar = styled.div`
+  width: 100%;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: ${({ percent }) => percent}%; /* Adjust the width based on the percentage */
+    background-color: ${({ color }) => color}; /* Dynamically set the background color */
+    border-radius: 5px;
+  }
+`;
+
+
+export const StatIcon = styled.span`
+  font-size: 16px;
+  margin-right: 5px;
+`;
+
+// Status bar component
+export const StatusBar = styled.div`
+  display: flex;
+  align-items: center;
+`;
