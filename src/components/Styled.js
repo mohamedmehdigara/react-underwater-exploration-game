@@ -296,18 +296,27 @@ export const Item = styled.li`
 `;
 
 export const QuestContainer = styled.div`
-  border: 2px solid #ff9800; /* Example border color */
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 20px;
+  margin-bottom: 20px;
 `;
 
 export const QuestTitle = styled.h3`
-  color: #ff9800; /* Example title color */
+  color: #333;
+  font-size: 20px;
 `;
 
 export const QuestDescription = styled.p`
-  color: #333; /* Example description color */
+  color: #666;
+  font-size: 16px;
+`;
+
+export const QuestStatus = styled.p`
+  color: ${({ status }) => (status === 'completed' ? 'green' : status === 'active' ? 'blue' : 'black')};
+  font-weight: bold;
+`;
+
+export const QuestReward = styled.p`
+  color: #333;
+  font-weight: bold;
 `;
 
 export const RuinsContainer = styled.div`
