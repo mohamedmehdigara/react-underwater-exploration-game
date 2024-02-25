@@ -330,3 +330,16 @@ export const RuinsText = styled.p`
   margin-top: 10px;
   color: #333; /* Example text color */
 `;
+
+export const InfoText = styled.div`
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+`;
+
+export const ScoreDisplay = styled.p`
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  margin-top: 20px;
+`;
