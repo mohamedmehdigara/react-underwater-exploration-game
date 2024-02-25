@@ -355,3 +355,35 @@ export const NavLink = styled.a`
     color: #e0e0e0;
   }
 `;
+
+export const ItemDetails = styled.div`
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-right: 10px;
+  }
+
+  button {
+    background-color: #82b1ff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #6a89cc;
+    }
+  }
+`;
+
+export const PointOfInterest = styled.circle`
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.2); /* Scale up on hover */
+  }
+`;
