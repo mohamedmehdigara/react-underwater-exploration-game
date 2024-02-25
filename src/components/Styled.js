@@ -402,3 +402,22 @@ export const MysteryButton = styled.button`
     background-color: #6a89cc;
   }
 `;
+
+export const ObstacleInfo = styled.div`
+  flex-grow: 1;
+`;
+
+export const ObstacleButton = styled.button`
+  background-color: #82b1ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: #6a89cc;
+  }
+`;
