@@ -498,3 +498,28 @@ export const RuinsTitle = styled.h2`
   color: #333;
   margin-bottom: 10px;
 `;
+
+export const CaveContainer = styled.div`
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+`;
+
+export const CaveTitle = styled.h2`
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+`;
+
+export const CaveDescription = styled.p`
+  color: #333;
+  font-size: 16px;
+`;
+
+export const CaveSVG = styled.svg`
+  width: 100%;
+  height: auto;
+  /* Add any additional styles for the SVG here */
+`;
