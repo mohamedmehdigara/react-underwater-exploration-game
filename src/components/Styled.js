@@ -523,3 +523,21 @@ export const CaveSVG = styled.svg`
   height: auto;
   /* Add any additional styles for the SVG here */
 `;
+
+export const FloraContainer = styled.div`
+  margin: 20px;
+`;
+
+export const FloraTitle = styled.h2`
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+`;
+
+export const FloraSVG = styled.svg`
+  /* Define styles for the SVG */
+`;
+export const FloraDescription = styled.p`
+  color: #333;
+  font-size: 16px;
+`;

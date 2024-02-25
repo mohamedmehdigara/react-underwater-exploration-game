@@ -14,6 +14,7 @@ import Inventory from './components/Inventory';
 import Quest from './components/Quest';
 import UnderwaterRuins from './components/UnderwaterRuins';
 import UnderwaterCave from './components/UnderwaterCave';
+import UnderwaterFlora from './components/UnderwaterFlora';
 
 function App() {
   const handleTreasureCollection = () => {
@@ -37,6 +38,7 @@ function App() {
      <Quest/>
      <UnderwaterRuins/>
      <UnderwaterCave/>
+     <UnderwaterFlora/>
 
      </div>
   );
