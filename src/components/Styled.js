@@ -309,3 +309,24 @@ export const QuestTitle = styled.h3`
 export const QuestDescription = styled.p`
   color: #333; /* Example description color */
 `;
+
+export const RuinsContainer = styled.div`
+  border: 2px solid #795548; /* Example border color */
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+`;
+
+export const RuinsSVG = styled.svg`
+  width: 100%;
+  max-width: 300px; /* Adjust maximum width of the SVG */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+`;
+
+export const RuinsText = styled.p`
+  margin-top: 10px;
+  color: #333; /* Example text color */
+`;

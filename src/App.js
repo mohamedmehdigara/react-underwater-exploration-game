@@ -12,6 +12,7 @@ import TreasureChest from './components/TreasureChest';
 import UnderwaterVehicle from './components/UnderwaterVehicule';
 import Inventory from './components/Inventory';
 import Quest from './components/Quest';
+import UnderwaterRuins from './components/UnderwaterRuins';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
      <UnderwaterVehicle type="submarine" />
      <Inventory/>
      <Quest/>
+     <UnderwaterRuins/>
 
      </div>
   );
