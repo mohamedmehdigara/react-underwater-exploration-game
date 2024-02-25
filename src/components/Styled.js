@@ -233,3 +233,29 @@ export const TerrainFeature = styled.div`
     }
   }};
 `;
+
+export const TreasureChestContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px;
+  border: 2px solid #ffc107; /* Example border color */
+  border-radius: 10px;
+  background-color: #fff; /* Example background color */
+  transition: transform 0.3s;
+  user-select: none; /* Prevent text selection */
+  
+  &:hover {
+    transform: scale(1.1); /* Enlarge the chest on hover */
+  }
+`;
+
+export const ChestIcon = styled.div`
+  font-size: 48px; /* Adjust icon size */
+`;
+
+export const ChestText = styled.p`
+  margin-top: 5px;
+`;
