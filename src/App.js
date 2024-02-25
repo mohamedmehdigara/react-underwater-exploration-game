@@ -15,7 +15,7 @@ import Quest from './components/Quest';
 import UnderwaterRuins from './components/UnderwaterRuins';
 import UnderwaterCave from './components/UnderwaterCave';
 import UnderwaterFlora from './components/UnderwaterFlora';
-
+import UnderwaterWildlife from './components/UnderwaterWildlife';
 function App() {
   const handleTreasureCollection = () => {
     console.log('Treasure collected!');
@@ -39,7 +39,7 @@ function App() {
      <UnderwaterRuins/>
      <UnderwaterCave/>
      <UnderwaterFlora/>
-
+     <UnderwaterWildlife/>
      </div>
   );
 }

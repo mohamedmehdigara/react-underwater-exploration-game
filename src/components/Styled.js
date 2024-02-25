@@ -541,3 +541,29 @@ export const FloraDescription = styled.p`
   color: #333;
   font-size: 16px;
 `;
+
+
+export const WildlifeContainer = styled.div`
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+`;
+
+export const WildlifeTitle = styled.h2`
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+`;
+
+export const WildlifeDescription = styled.p`
+  color: #666;
+  font-size: 16px;
+`;
+
+export const WildlifeSVG = styled.svg`
+  width: 100px; /* Adjust the size of the SVG */
+  height: 100px;
+`;
+
