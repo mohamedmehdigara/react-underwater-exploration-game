@@ -161,3 +161,75 @@ export const PlayerStatusContainer = styled.div`
 export const StatItem = styled.div`
   margin-bottom: 5px;
 `;
+
+
+export const UnderwaterWorldContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
+
+export const Reef = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 100px;
+  background-color: #D1C4E9; /* Example color for reef */
+  border-radius: 50%;
+`;
+
+export const Plant = styled.div`
+  position: absolute;
+  ${({ type }) => {
+    switch (type) {
+      case 'seaweed':
+        return `
+          top: 80%;
+          left: 20%;
+          width: 20px;
+          height: 80px;
+          background-color: #2E7D32; /* Example color for seaweed */
+        `;
+      case 'coral':
+        return `
+          top: 70%;
+          left: 80%;
+          width: 60px;
+          height: 40px;
+          background-color: #FF5722; /* Example color for coral */
+        `;
+      default:
+        return '';
+    }
+  }};
+`;
+
+export const TerrainFeature = styled.div`
+  position: absolute;
+  ${({ type }) => {
+    switch (type) {
+      case 'cave':
+        return `
+          top: 10%;
+          left: 10%;
+          width: 100px;
+          height: 100px;
+          background-color: #263238; /* Example color for cave */
+          border-radius: 50%;
+        `;
+      case 'rock':
+        return `
+          top: 40%;
+          left: 60%;
+          width: 80px;
+          height: 60px;
+          background-color: #757575; /* Example color for rock */
+          border-radius: 10px;
+        `;
+      default:
+        return '';
+    }
+  }};
+`;

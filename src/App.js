@@ -7,6 +7,7 @@ import { Container } from './components/Styled';
 import Map from './components/Map';
 import Obstacle from './components/Obstacle';
 import PlayerStatus from './components/PlayerStatus';
+import UnderwaterWorld from './components/UnderwaterWorld';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
      <Map />
      <Obstacle />
      <PlayerStatus health={100} oxygenLevel={80} score={500} />
+     <UnderwaterWorld />
+
      </div>
   );
 }
