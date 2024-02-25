@@ -140,3 +140,24 @@ export const ControlButton = styled.button`
     background-color: #e0e0e0;
   }
 `;
+
+export const MapContainer = styled.div`
+  margin: 20px;
+`;
+
+export const MapSvg = styled.svg`
+  width: 100%; /* Ensure the SVG image fills its container */
+  height: auto;
+`;
+
+export const ObstacleContainer = styled.div`
+  margin: 20px;
+`;
+
+export const PlayerStatusContainer = styled.div`
+  margin: 20px;
+`;
+
+export const StatItem = styled.div`
+  margin-bottom: 5px;
+`;
