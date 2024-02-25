@@ -294,3 +294,18 @@ export const ItemList = styled.ul`
 export const Item = styled.li`
   margin-bottom: 5px;
 `;
+
+export const QuestContainer = styled.div`
+  border: 2px solid #ff9800; /* Example border color */
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+`;
+
+export const QuestTitle = styled.h3`
+  color: #ff9800; /* Example title color */
+`;
+
+export const QuestDescription = styled.p`
+  color: #333; /* Example description color */
+`;
