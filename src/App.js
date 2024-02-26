@@ -16,6 +16,7 @@ import UnderwaterRuins from './components/UnderwaterRuins';
 import UnderwaterCave from './components/UnderwaterCave';
 import UnderwaterFlora from './components/UnderwaterFlora';
 import UnderwaterWildlife from './components/UnderwaterWildlife';
+import Creature from './components/Creature';
 function App() {
   const handleTreasureCollection = () => {
     console.log('Treasure collected!');
@@ -32,6 +33,15 @@ function App() {
      <Obstacle />
      <PlayerStatus health={100} oxygenLevel={80} score={500} />
      <UnderwaterWorld />
+     <Creature type="fish" color="blue" size={20} onClick={() => console.log('Clicked on fish')} />
+     <Creature type="jellyfish" color="blue" size={20} onClick={() => console.log('Clicked on jellyfish')} />
+     <Creature type="shark" color="blue" size={20} onClick={() => console.log('Clicked on shark')} />
+     <Creature type="turtle" color="blue" size={20} onClick={() => console.log('Clicked on turtle')} />
+     <Creature type="dolphin" color="blue" size={20} onClick={() => console.log('Clicked on dolphin')} />
+     <Creature type="seahorse" color="blue" size={20} onClick={() => console.log('Clicked on seahorse')} />
+
+
+
      <TreasureChest onClick={handleTreasureCollection} />
      <UnderwaterVehicle type="submarine" />
      <Inventory/>

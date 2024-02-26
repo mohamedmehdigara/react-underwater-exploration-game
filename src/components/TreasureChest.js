@@ -1,15 +1,20 @@
-// TreasureChest.js
 import React, { useState } from 'react';
-import { TreasureChestContainer, ChestIcon, ChestText, ChestParticles } from './Styled';
+import { TreasureChestContainer, ChestIcon, ChestText, ChestParticles, MysteryButton } from './Styled';
 
 function TreasureChest({ onClick }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [revealed, setRevealed] = useState(false);
 
   const handleClick = () => {
     // Ensure onClick is a function before calling it
-    if (typeof onClick === 'function') {
+    if (typeof onClick === 'function' && !isOpen) {
       onClick();
+      setIsOpen(true);
     }
+  };
+
+  const handleReveal = () => {
+    setRevealed(true);
   };
 
   return (
@@ -19,7 +24,10 @@ function TreasureChest({ onClick }) {
         {isOpen ? '🎉' : '🏆'}
       </ChestIcon>
       <ChestText>{isOpen ? 'Treasure Collected!' : 'Click to collect treasure!'}</ChestText>
-      {isOpen && <ChestParticles />}
+      {isOpen && !revealed && (
+        <MysteryButton onClick={handleReveal}>Reveal Mystery</MysteryButton>
+      )}
+      {isOpen && revealed && <ChestParticles />}
     </TreasureChestContainer>
   );
 }
