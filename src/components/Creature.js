@@ -72,17 +72,33 @@ function Creature({ type, color, size, onClick }) {
           <>
             {/* Shark body */}
             <circle cx="50" cy="50" r={size * 2} fill={color} />
+
             {/* Shark fins */}
             <Fin x1="30" y1="50" x2="20" y2="60" />
             <Fin x1="70" y1="50" x2="80" y2="60" />
             <Fin x1="40" y1="70" x2="30" y2="80" />
             <Fin x1="60" y1="70" x2="70" y2="80" />
+
             {/* Shark teeth */}
             <circle cx="50" cy="70" r="2" fill="#fff" />
             <circle cx="45" cy="70" r="2" fill="#fff" />
             <circle cx="55" cy="70" r="2" fill="#fff" />
             <circle cx="40" cy="55" r="2" fill="#fff" />
             <circle cx="60" cy="55" r="2" fill="#fff" />
+
+            {/* Shark tail */}
+            <path d={`M ${50 - size * 2.5} ${50 + size * 2} L ${50 - size * 3.5} ${50 + size} L ${50 - size * 2.5} ${50 + size * 1.5} Z`} fill={color} />
+
+            {/* Shark gills */}
+            <g fill="#fff">
+              <circle cx="45" cy="50" r="2" />
+              <circle cx="47" cy="53" r="2" />
+              <circle cx="49" cy="56" r="2" />
+              <circle cx="51" cy="59" r="2" />
+            </g>
+
+            {/* Shark dorsal fin */}
+            <path d={`M ${50} ${50 - size * 2.5} L ${50 - size} ${50 - size * 3.5} L ${50 + size} ${50 - size * 3.5} Z`} fill={color} />
           </>
         )}
         {type === 'turtle' && (
@@ -104,12 +120,23 @@ function Creature({ type, color, size, onClick }) {
           <>
             {/* Dolphin body */}
             <circle cx="50" cy="50" r={size * 1.5} fill={color} />
+
             {/* Dolphin fins */}
             <Fin x1="40" y1="50" x2="30" y2="60" />
             <Fin x1="60" y1="50" x2="70" y2="60" />
+
             {/* Dolphin tail */}
             <Fin x1="30" y1="55" x2="20" y2="50" />
             <Fin x1="70" y1="55" x2="80" y2="50" />
+
+            {/* Dolphin dorsal fin */}
+            <path d={`M ${50} ${50 - size * 1.5} L ${50 - size * 0.5} ${50 - size * 2.5} L ${50 + size * 0.5} ${50 - size * 2.5} Z`} fill={color} />
+
+            {/* Dolphin flippers */}
+            <g fill={color}>
+              <path d={`M ${50 - size * 1.5} ${50 - size * 0.5} L ${50 - size * 2} ${50 + size * 0.5} L ${50 - size * 1.2} ${50 + size * 1} Z`} />
+              <path d={`M ${50 + size * 1.5} ${50 - size * 0.5} L ${50 + size * 2} ${50 + size * 0.5} L ${50 + size * 1.2} ${50 + size * 1} Z`} />
+            </g>
           </>
         )}
         {type === 'seahorse' && (
