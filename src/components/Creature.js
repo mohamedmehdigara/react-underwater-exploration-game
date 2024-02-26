@@ -201,6 +201,8 @@ function Creature({ type, color, size, onClick }) {
           </>
         )}
       </CreatureImage>
+      {isReproducing && <span>Reproducing...</span>}
+      {isDead && <span>☠️ Dead</span>}
       {/* Label each sea animal */}
       <label>{type}</label>
     </CreatureContainer>
