@@ -1,4 +1,3 @@
-// PlayerStatus.js
 import React from 'react';
 import { PlayerStatusContainer, StatItem, StatIcon, StatusBar } from './Styled';
 import { FaHeart, FaLungs, FaStar } from 'react-icons/fa';
@@ -16,7 +15,8 @@ function PlayerStatus({ health, oxygenLevel, score }) {
           <FaHeart />
         </StatIcon>
         Health:
-        <StatusBar percentage={healthPercentage} />
+        <StatusBar percentage={healthPercentage} color="#ff6347" />
+        {/* Set color to red */}
       </StatItem>
       {/* Display oxygen level with an icon and a progress bar */}
       <StatItem>
@@ -24,7 +24,8 @@ function PlayerStatus({ health, oxygenLevel, score }) {
           <FaLungs />
         </StatIcon>
         Oxygen Level:
-        <StatusBar percentage={oxygenPercentage} />
+        <StatusBar percentage={oxygenPercentage} color="#00bfff" />
+        {/* Set color to blue */}
       </StatItem>
       {/* Display score with an icon */}
       <StatItem>

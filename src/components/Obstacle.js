@@ -1,4 +1,3 @@
-// Obstacle.js
 import React, { useState } from 'react';
 import { ObstacleContainer, ObstacleInfo, ObstacleButton } from './Styled';
 
@@ -6,8 +5,11 @@ function Obstacle() {
   const [overcome, setOvercome] = useState(false);
 
   function handleOvercome() {
-    // Logic to handle overcoming the obstacle
-    setOvercome(true);
+    // Simulate asynchronous obstacle overcoming
+    setTimeout(() => {
+      // Logic to handle overcoming the obstacle
+      setOvercome(true);
+    }, 1000); // Simulate a delay for realism
   }
 
   return (

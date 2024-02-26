@@ -567,3 +567,9 @@ export const WildlifeSVG = styled.svg`
   height: 100px;
 `;
 
+export const ItemStatus = styled.span`
+  color: ${({ used }) => (used ? 'green' : 'red')};
+  margin-left: 10px;
+  font-size: 14px;
+`;
+

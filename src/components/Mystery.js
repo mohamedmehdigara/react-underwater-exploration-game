@@ -1,9 +1,15 @@
-// Mystery.js
 import React, { useState } from 'react';
 import { MysteryContainer, MysteryTitle, MysteryDescription, MysteryButton } from './Styled';
 
 function Mystery() {
   const [revealed, setRevealed] = useState(false);
+
+  // Define clues as an array of objects
+  const [clues, setClues] = useState([
+    { id: 1, text: 'The shipwreck is located near the coral reef.' },
+    { id: 2, text: 'Look for a key hidden among the seaweed.' },
+    // Add more clues as needed
+  ]);
 
   function handleReveal() {
     setRevealed(true);
@@ -20,7 +26,10 @@ function Mystery() {
       {!revealed && <MysteryButton onClick={handleReveal}>Reveal Clue</MysteryButton>}
       {revealed && (
         <div>
-          <p>Clue: The shipwreck is located near the coral reef.</p>
+          {/* Render all revealed clues */}
+          {clues.map((clue) => (
+            <p key={clue.id}>Clue: {clue.text}</p>
+          ))}
           {/* Add more clues or interactive elements */}
         </div>
       )}

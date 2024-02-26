@@ -1,4 +1,3 @@
-// Header.js
 import React from 'react';
 import { HeaderContainer, Title, Navbar, NavItem, NavLink } from './Styled';
 
@@ -35,6 +34,9 @@ function Header() {
         </NavItem>
         <NavItem>
           <NavLink href="#settings">Settings</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="#leaderboard">Leaderboard</NavLink>
         </NavItem>
         {/* Add more navigation options */}
       </Navbar>

@@ -1,4 +1,3 @@
-// Gameplay.js
 import React, { useState } from 'react';
 import Creature from './Creature';
 import Mystery from './Mystery';
@@ -15,15 +14,25 @@ function Gameplay() {
     setScore(score + 10); // Increase score when interacting with creatures
   }
 
+  function handleTreasureCollection() {
+    // Logic to handle treasure collection
+    setScore(score + 50); // Increase score when collecting treasure
+  }
+
+  function handleMysterySolved() {
+    // Logic to handle mystery solved
+    setScore(score + 100); // Increase score when solving a mystery
+  }
+
   return (
     <GameplayContainer>
       {/* Render underwater world, creatures, mysteries, etc. */}
       <Creature onClick={handleCreatureInteraction} />
-      <Mystery />
+      <Mystery onSolve={handleMysterySolved} />
       {/* Render obstacles */}
       <Obstacle />
       {/* Render treasures */}
-      <Treasure />
+      <Treasure onClick={handleTreasureCollection} />
       {/* Render quests */}
       <Quest />
       {/* Display score */}
