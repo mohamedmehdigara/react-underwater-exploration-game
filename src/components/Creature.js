@@ -6,6 +6,8 @@ function Creature({ type, color, size, onClick }) {
   const [lifecycleStage, setLifecycleStage] = useState('hatchling');
   const [isReproducing, setIsReproducing] = useState(false);
   const [isDead, setIsDead] = useState(false);
+  const [behavior, setBehavior] = useState('idle'); // Track the behavior of the creature
+
 
  
   useEffect(() => {
@@ -49,6 +51,11 @@ function Creature({ type, color, size, onClick }) {
       onClick();
     }
   }
+
+  const handleInteraction = () => {
+    // Example: If the player clicks on the creature, it may change its behavior
+    setBehavior('following');
+  };
 
   return (
     <CreatureContainer>

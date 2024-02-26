@@ -1,5 +1,5 @@
 // App.js
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './components/Header';
 import Gameplay from './components/Gameplay';
 import Footer from './components/Footer';
@@ -17,7 +17,10 @@ import UnderwaterCave from './components/UnderwaterCave';
 import UnderwaterFlora from './components/UnderwaterFlora';
 import UnderwaterWildlife from './components/UnderwaterWildlife';
 import Creature from './components/Creature';
+
 function App() {
+  
+
   const handleTreasureCollection = () => {
     console.log('Treasure collected!');
     // Add logic to handle treasure collection
@@ -50,6 +53,7 @@ function App() {
      <UnderwaterCave/>
      <UnderwaterFlora/>
      <UnderwaterWildlife/>
+
      </div>
   );
 }

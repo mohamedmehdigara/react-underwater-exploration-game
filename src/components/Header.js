@@ -1,7 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { HeaderContainer, Title, Navbar, NavItem, NavLink } from './Styled';
+import SettingsMenu from './SettingsMenu';
 
 function Header() {
+  const [showSettings, setShowSettings] = useState(false);
+
+  const toggleSettings = () => {
+    setShowSettings(!showSettings);
+  };
   return (
     <HeaderContainer>
       {/* Render logo with SVG */}
@@ -33,13 +39,15 @@ function Header() {
           <NavLink href="#controls">Controls</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#settings">Settings</NavLink>
+          <button onClick={toggleSettings}>Settings</button>
         </NavItem>
         <NavItem>
           <NavLink href="#leaderboard">Leaderboard</NavLink>
         </NavItem>
         {/* Add more navigation options */}
       </Navbar>
+      {showSettings && <SettingsMenu onClose={() => setShowSettings(false)} />}
+
     </HeaderContainer>
   );
 }
