@@ -16,18 +16,56 @@ function Creature({ type, color, size, onClick }) {
             {/* Fish eyes */}
             <Eye cx="40" cy="45" />
             <Eye cx="60" cy="45" />
+            {/* Fish mouth */}
+            <path d="M40 55 Q50 60 60 55" fill="none" stroke="black" strokeWidth="2" />
+            {/* Fish tail */}
+            <path d="M80 50 Q85 40 85 50 Q85 60 80 50" fill={color} stroke="none" />
             {/* Fish fins */}
             <Fin x1="30" y1="50" x2="20" y2="60" />
             <Fin x1="70" y1="50" x2="80" y2="60" />
+            {/* Fish scales */}
+            <circle cx="45" cy="50" r="2" fill="#fff" />
+            <circle cx="50" cy="45" r="2" fill="#fff" />
+            <circle cx="55" cy="50" r="2" fill="#fff" />
           </>
         )}
         {type === 'jellyfish' && (
           <>
-            {/* Jellyfish body */}
-            <circle cx="50" cy="50" r={size * 1.5} fill={color} />
-            {/* Jellyfish tentacles */}
-            <path d="M 50 65 Q 30 80 20 100" fill="none" stroke="#fff" strokeWidth="3" />
-            <path d="M 50 65 Q 70 80 80 100" fill="none" stroke="#fff" strokeWidth="3" />
+            {/* Jellyfish body with gradient color */}
+            <defs>
+              <radialGradient id="jellyfishGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                <stop offset="0%" style={{ stopColor: '#fff', stopOpacity: 0 }} />
+                <stop offset="100%" style={{ stopColor: color, stopOpacity: 1 }} />
+              </radialGradient>
+            </defs>
+            <circle cx="50" cy="50" r={size * 1.5} fill="url(#jellyfishGradient)" />
+
+            {/* Jellyfish tentacles with translucent areas */}
+            <g stroke={color} strokeWidth="2">
+              {/* Main tentacles */}
+              <path
+                d={`M ${50 - size * 0.5} ${85 + size * 1.5} 
+                  Q ${50 - size * 1.5} ${110 + size * 1.5} ${50 - size * 2.5} ${150 + size * 1.5}`}
+                fill="none"
+              />
+              <path
+                d={`M ${50 + size * 0.5} ${85 + size * 1.5} 
+                  Q ${50 + size * 1.5} ${110 + size * 1.5} ${50 + size * 2.5} ${150 + size * 1.5}`}
+                fill="none"
+              />
+
+              {/* Secondary tentacles */}
+              <path
+                d={`M ${50 - size * 0.3} ${80 + size * 1.5} 
+                  Q ${50 - size * 0.9} ${105 + size * 1.5} ${50 - size * 1.8} ${135 + size * 1.5}`}
+                fill="none"
+              />
+              <path
+                d={`M ${50 + size * 0.3} ${80 + size * 1.5} 
+                  Q ${50 + size * 0.9} ${105 + size * 1.5} ${50 + size * 1.8} ${135 + size * 1.5}`}
+                fill="none"
+              />
+            </g>
           </>
         )}
         {type === 'shark' && (
