@@ -1,6 +1,27 @@
 // styled.js
 import styled, {keyframes} from 'styled-components';
 
+
+
+// Apply animation to the CreatureImage component
+export const swimAnimation = keyframes`
+0% {
+  transform: translateX(-50%);
+}
+50% {
+  transform: translateX(50%);
+}
+100% {
+  transform: translateX(-50%);
+}
+`;
+
+// Apply animation to the CreatureImage component
+export const CreatureImage = styled.svg`
+animation: ${swimAnimation} 5s ease-in-out infinite; // Adjust duration and timing function as needed
+`;
+
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -44,22 +65,13 @@ export const GameplayContainer = styled.div`
   margin: 20px;
 `;
 
-const swimAnimation = keyframes`
-  0% { transform: translateY(0); }
-  50% { transform: translateY(5px); }
-  100% { transform: translateY(0); }
-`;
+
 
 export const CreatureContainer = styled.div`
   margin: 10px;
 `;
 
-export const CreatureImage = styled.svg`
-  width: 100px; /* Adjust the size of the creature */
-  height: 100px;
-  animation: ${swimAnimation} 2s infinite alternate; /* Add swim animation */
-  cursor: pointer; /* Change cursor to pointer on hover */
-`;
+
 
 export const Eye = styled.circle`
   cx: ${({ cx }) => cx};
@@ -572,4 +584,7 @@ export const ItemStatus = styled.span`
   margin-left: 10px;
   font-size: 14px;
 `;
+
+// Define animation keyframes for creature movement
+
 

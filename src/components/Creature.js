@@ -2,6 +2,9 @@ import React from 'react';
 import { CreatureContainer, CreatureImage, Eye, Fin } from './Styled';
 
 function Creature({ type, color, size, onClick }) {
+
+ 
+
   return (
     <CreatureContainer>
       <CreatureImage
