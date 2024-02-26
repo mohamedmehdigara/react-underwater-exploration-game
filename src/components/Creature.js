@@ -1,9 +1,31 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { CreatureContainer, CreatureImage, Eye, Fin } from './Styled';
 
 function Creature({ type, color, size, onClick }) {
+  const [age, setAge] = useState(0); // Track the age of the creature
+  const [lifecycleStage, setLifecycleStage] = useState('baby');
 
  
+  useEffect(() => {
+    // Logic to handle lifecycle progression
+    const interval = setInterval(() => {
+      // Increase age over time
+      setAge(prevAge => prevAge + 1);
+
+      // Update lifecycle stage based on age
+      if (age >= 0 && age < 10) {
+        setLifecycleStage('baby');
+      } else if (age >= 10 && age < 20) {
+        setLifecycleStage('young');
+      } else if (age >= 20 && age < 30) {
+        setLifecycleStage('adult');
+      } else {
+        setLifecycleStage('elderly');
+      }
+    }, 1000); // Update age every second
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, [age]);
 
   return (
     <CreatureContainer>
