@@ -3,29 +3,52 @@ import { CreatureContainer, CreatureImage, Eye, Fin } from './Styled';
 
 function Creature({ type, color, size, onClick }) {
   const [age, setAge] = useState(0); // Track the age of the creature
-  const [lifecycleStage, setLifecycleStage] = useState('baby');
+  const [lifecycleStage, setLifecycleStage] = useState('hatchling');
+  const [isReproducing, setIsReproducing] = useState(false);
+  const [isDead, setIsDead] = useState(false);
 
  
   useEffect(() => {
-    // Logic to handle lifecycle progression
-    const interval = setInterval(() => {
+    const ageInterval = setInterval(() => {
       // Increase age over time
       setAge(prevAge => prevAge + 1);
 
       // Update lifecycle stage based on age
-      if (age >= 0 && age < 10) {
-        setLifecycleStage('baby');
-      } else if (age >= 10 && age < 20) {
-        setLifecycleStage('young');
-      } else if (age >= 20 && age < 30) {
-        setLifecycleStage('adult');
+      if (age >= 0 && age < 5) {
+        setLifecycleStage('hatchling');
+      } else if (age >= 5 && age < 15) {
+        setLifecycleStage('juvenile');
+      } else if (age >= 15 && age < 30) {
+        setLifecycleStage('prime adult');
+      } else if (age >= 30 && age < 40) {
+        setLifecycleStage('senior');
       } else {
-        setLifecycleStage('elderly');
+        // Creature dies after reaching maximum age
+        setIsDead(true);
+        clearInterval(ageInterval);
       }
     }, 1000); // Update age every second
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
+    return () => clearInterval(ageInterval);
   }, [age]);
+
+  useEffect(() => {
+    // Implement reproduction logic here
+    if (lifecycleStage === 'prime adult' && Math.random() < 0.05) {
+      setIsReproducing(true);
+      setTimeout(() => {
+        setIsReproducing(false);
+        // Spawn offspring here
+      }, 5000); // Wait for 5 seconds before completing reproduction
+    }
+  }, [lifecycleStage]);
+
+  function handleClick() {
+    if (!isDead) {
+      // Handle creature interaction
+      onClick();
+    }
+  }
 
   return (
     <CreatureContainer>
